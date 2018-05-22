@@ -10,7 +10,25 @@ SOURCES += main.cpp \
     ResourcesManager.cpp \
     game.cpp \
     rendersystem.cpp \
-    movementsystem.cpp
+    movementsystem.cpp \
+    circleshape.cpp \
+    rotation.cpp \
+    spawnsystem.cpp \
+    spawn.cpp \
+    collisionsystem.cpp \
+    collisionevent.cpp \
+    rigidcollision.cpp \
+    vector_common.cpp \
+    player.cpp \
+    playersystem.cpp \
+    spawnevent.cpp \
+    bullet.cpp \
+    timer.cpp \
+    lifetime.cpp \
+    lifetimesystem.cpp \
+    destructionmenager.cpp \
+    deathpenalty.cpp \
+    color.cpp
 
 HEADERS += \
     ResourcesManager.h \
@@ -20,4 +38,22 @@ HEADERS += \
     shape.h \
     rendersystem.h \
     velocity.h \
-    movementsystem.h
+    movementsystem.h \
+    circleshape.h \
+    rotation.h \
+    spawnsystem.h \
+    spawn.h \
+    collisionsystem.h \
+    collisionevent.h \
+    rigidcollision.h \
+    vector_common.h \
+    player.h \
+    playersystem.h \
+    spawnevent.h \
+    bullet.h \
+    timer.h \
+    lifetime.h \
+    lifetimesystem.h \
+    destructionmenager.h \
+    deathpenalty.h \
+    color.h

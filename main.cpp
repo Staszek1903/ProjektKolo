@@ -33,7 +33,7 @@ int main()
 
             game.update();
 
-            resources_manager.window.clear(sf::Color::Green);
+            resources_manager.window.clear(sf::Color::Black);
             game.draw();
 
             resources_manager.window.display();

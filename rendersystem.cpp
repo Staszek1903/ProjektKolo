@@ -10,8 +10,24 @@ void RenderSystem::update(entityx::EntityManager &en, entityx::EventManager &ev,
 {
     auto & resource = ResourcesManager::getInstanceRef();
 
-    Shape::Handle shape;
     Position::Handle position;
+    Rotation::Handle rotation;
+    Shape::Handle shape;
+    CircleShape::Handle circ;
+    Color::Handle color;
+
+    for(auto entity : en.entities_with_components(circ, position, rotation, color)){
+
+        sf::CircleShape circle;
+        circle.setFillColor(color->col);
+        circle.setPosition(position->pos);
+        circle.setRotation(rotation->angle);
+        circle.setRadius(circ->radius);
+        circle.setPointCount(circ->point_count);
+        circle.setOrigin(circ->radius, circ->radius);
+
+        window.draw(circle);
+    }
 
     for(entityx::Entity entity : en.entities_with_components(shape,position))
     {

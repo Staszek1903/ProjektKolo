@@ -2,13 +2,23 @@
 
 ResourcesManager* ResourcesManager::instance = nullptr;
 
-ResourcesManager::ResourcesManager() : window(sf::VideoMode(800, 600, 32), "SFML Test", sf::Style::Titlebar | sf::Style::Close)
+ResourcesManager::ResourcesManager()
 {
+    sf::ContextSettings settings;
+    settings.antialiasingLevel = 8;
+    window.create(sf::VideoMode(800, 600, 32), "SFML Test", sf::Style::Titlebar | sf::Style::Close, settings);
 	window.setVerticalSyncEnabled(true);
-    assert(font.loadFromFile("./COMIC.TTF"));
+
+    camera.setCenter(0,0);
+    sf::Vector2u size = window.getSize();
+    camera.setSize(sf::Vector2f(size.x, size.y));
+
+    window.setView(camera);
+
+    font.loadFromFile("./COMIC.TTF");
 
     sf::Texture tex;
-    assert(tex.loadFromFile("./texture.png"));
+    tex.loadFromFile("./texture.png");
     textures.push_back(tex);
 
     loadVertexArray(quad_vertex, quad_texture, 4);

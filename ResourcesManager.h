@@ -28,6 +28,7 @@ private:
     void loadVertexArray(sf::Vector2f v[], sf::Vector2f t[], int size);
 public:
 	sf::RenderWindow window;
+    sf::View camera;
     sf::Font font;
     std::vector <sf::VertexArray> vertex_arrays;
     std::vector <sf::Texture> textures;
